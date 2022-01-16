@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles.css')}}"
+    />
+
     <title>Tableau de bord PRAVAN</title>
-</head>
-<body>
-    <h1>Tableau de bord PRAVAN</h1>
-    
-</body>
+  </head>
+  <body>
+    <div id="fix">
+      <header id="header">
+        <a href="http://www.usthb.dz" class="logo"
+          ><img class="logo" src="../static/Images/usthbWHITE.png" alt="logo"
+        /></a>
+        <h1 class="titre">Tableau de bord PRAVAN</h1>
+        <a target="__blank" href="./Images/cv etudiant.pdf"
+          ><button class="download_pdf">Actualiser</button></a
+        >
+      </header>
+
+      <!-- Sidebar (left) -->
+      <div id="sidebar" class="card">
+        <h2 class="name">Axel BELKACEMI</h2>
+        <ul>
+          <li data-tab-target="#chart1" class="active">chart 1</li>
+          <li data-tab-target="#chart2">chart 2</li>
+          <li data-tab-target="#chart3">chart 3</li>
+          <li data-tab-target="#chart4">chart 4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <div id="chart1" class="active tab-content" data-tab-content>
+        <h1>Chart 1:</h1>
+        <canvas id="chart" ></canvas>
+      </div>
+      <div id="chart2" class="tab-content" data-tab-content>
+        <h1>Chart 2:</h1>
+        <canvas id="chartt" class="tab-content"></canvas>
+      </div>
+      <div id="chart3" class="tab-content" data-tab-content>
+        <h1>Chart 3:</h1>
+        <canvas id="chart"></canvas>
+      </div>
+      <div id="chart4" class="tab-content" data-tab-content>
+        <h1>Chart 4:</h1>
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+  </body>
+  <script src="{{url_for('static', filename='script1.js')}}"></script>
 </html>

@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+* {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background: url(./Images/background.jpg); */
+  background-color: #dbe4fa;
+  font-family: "Work Sans", sans-serif;
+}
+.card {
+  /* border: 1px solid #ddd; */
+  background-color: #1e2c39;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: #dfe3f1;
+  padding-top: 30px;
+  position: relative;
+  max-width: 100%;
+  /* text-align: center; */
+  margin: 10px;
+  /* padding: 20px; */
+  /* margin-bottom: 10px; */
+}
+.bottom-card {
+  margin-bottom: 20px;
+}
+
+#fix {
+  /* position: fixed; */
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e2c39;
+  padding: 0 20px;
+  height: 5rem;
+  font-size: 1.1rem;
+  /* outline: #dbe4fa solid 10px; */
+  /* transition: margin ease; */
+  /* filter: blur(2px); */
+}
+.logo {
+  height: 5rem;
+  transition: all 0.3s ease-in-out 0s;
+  margin-left: 20px;
+  /* background-color: #24252a; */
+  /* border-radius: 2rem; */
+  /* align-self:flex-start; */
+}
+.titre {
+  color: #dfe3f1;
+  text-align: left;
+  width: 57%;
+}
+header button {
+  cursor: pointer;
+  background-color: rgba(0, 180, 224, 1);
+  padding: 9px 25px;
+  border: none;
+  border-radius: 2rem;
+  font-size: large;
+  transition: all 0.3s ease 0s;
+}
+header button:hover {
+  background-color: rgba(0, 180, 224, 0.8);
+}
+.logo:hover {
+  transform: translateX(15px);
+  /* transform: scale(1.2); */
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#sidebar {
+  width: 20%;
+  height: 80vh;
+  position: relative;
+  float: left;
+  margin: 10px 0px 10px 10px;
+}
+#sidebar.card {
+  text-align: center;
+}
+
+/* -------------------------------------------------------------- */
+
+#sidebar h2 {
+  margin: auto;
+}
+#sidebar ul {
+  padding: 20px;
+}
+#sidebar ul li {
+  list-style-type: none;
+  text-align: left;
+  font-size: 120%;
+  margin: 20px auto;
+  transition: all 0.3s ease-in 0s;
+
+}
+
+
+
+.main {
+  width: 70%;
+  float: right;
+  margin-right: 20px;
+}
+[data-tab-target]:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  color: #00b4e0;
+  transition: all 0s ease 0.4;
+}
+.active[data-tab-target] {
+  /* font-size: large; */
+  transform: translateX(30px) scale(1.2);
+  
+  color: #59b9d1;
+  transition: all 0.3s ease-in 0s;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+  
+}
