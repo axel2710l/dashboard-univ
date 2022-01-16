@@ -7,7 +7,8 @@ You must have the following packages installed: \
 ### `pip install flask`
 3-cryptography
 ### `pip install cryptography`
-4-Internet connection is required, since the charts script is pn chartjs CDN.
+4-MySQL communitu server(with all the necessary database end configuration).\
+5-Internet connection is required, since the charts script is pn chartjs CDN.
 
 
 
