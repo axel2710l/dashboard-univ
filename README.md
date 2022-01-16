@@ -1,7 +1,8 @@
 # Getting Started with DashBoard PRAVAN
-##Important notes:
-You must have the following packages installed:
-1-Python
+## Important notes:
+You must have the following packages installed: \
+
+1-Python\
 2-Flask:
 ### `pip install flask`
 3-cryptography
