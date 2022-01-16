@@ -38,15 +38,12 @@ def stdPerYear():
 
     return make_response(jsonify(json_data),200)
 
-@app.route('/api/students/perSpeciality/<string:spec>', methods=['GET'])
-def stdPerSpec(spec):
-    print(spec)
+@app.route('/api/students/perSpeciality', methods=['GET'])
+def stdPerSpec():
     conn=mysql.connect()
     #create cursor
     cursor= conn.cursor()
-    sql = "SELECT annee,  count(*) AS nbrstd FROM resultats WHERE specialite='specialite_1' GROUP BY annee;"
-    # val = (spec)
-    print(sql)
+    sql = "SELECT specialite, annee,  count(*) AS nbrstd FROM resultats  GROUP BY  annee, specialite;"
     cursor.execute(sql)
     data=cursor.fetchall()
     row_headers=[x[0] for x in cursor.description]
@@ -57,6 +54,25 @@ def stdPerSpec(spec):
         json_data.append(dict(zip(row_headers, result)))
 
     return make_response(jsonify(json_data),200)
+
+@app.route('/api/students/grades', methods=['GET'])
+def getGrades():
+    conn=mysql.connect()
+    #create cursor
+    cursor= conn.cursor()
+    sql = "SELECT specialite, annee,  moyenne FROM resultats ;"
+    cursor.execute(sql)
+    data=cursor.fetchall()
+    row_headers=[x[0] for x in cursor.description]
+    cursor.close()
+
+    json_data=[]
+    for result in data:
+        json_data.append(dict(zip(row_headers, result)))
+
+    return make_response(jsonify(json_data),200)
+
+
 
 
 
