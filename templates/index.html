@@ -23,33 +23,33 @@
         <h1 class="titre">Tableau de bord PRAVAN</h1>
         Vue Generale: 
         <label class="switch">
-          <input type="checkbox" class="vue-generale">
+          <input type="checkbox" id="vue-generale">
           <span class="slider round"></span>
         </label>
-        <button class="download_pdf" onclick="updateChart2('SPECIALITE_1', 'SPECIALITE_2', 'SPECIALITE_3')">Actualiser</button>
+        <button class="download_pdf" onclick="actualiser()">Actualiser</button>
         
       </header>
 
       <!-- Sidebar (left) -->
       <div id="sidebar" class="card">
-        <h2 class="name">Axel BELKACEMI</h2>
+        <h2 class="name">Selectionnez un graph:</h2>
         <ul>
-          <li data-tab-target="#chart1" class="active">chart 1</li>
-          <li data-tab-target="#chart2">chart 2</li>
-          <li data-tab-target="#chart3">chart 3</li>
+          <li data-tab-target="#chart1" class="active">Etudiants par Année</li>
+          <li data-tab-target="#chart2">Etudiants par specialité (annuel)</li>
+          <li data-tab-target="#chart3">Pourcentage d'admis (annuel)</li>
         </ul>
       </div>
     </div>
-    <div class="main">
-      <div id="chart1" class="active tab-content" data-tab-content>
-        <h3>Chart 1:</h3>
+    <div class="main vue vue-gen">
+      <div id="chart1" class="active tab-content vue vue-gen" data-tab-content>
+        <h3>Etudiants par année:</h3>
        
-        <div class="canvas">
+        <div class="canvas vue vue-gen">
         <canvas id="canvas1" ></canvas>
       </div>
       </div>
-      <div id="chart2" class="tab-content" data-tab-content>
-        <h3>Chart 2:</h3>
+      <div id="chart2" class="tab-content vue vue-gen" data-tab-content>
+        <h3>Etudiants par specialité:</h3>
         <div id="choix-spec">
         <label class="container">1
           <input type="checkbox" class="specialite-choix" value="1" checked="checked">
@@ -83,13 +83,13 @@
         </label>
         <button class="btn" onclick="reloadChart2()">Charger</i></button>
       </div>
-      <div class="canvas">
-        <canvas id="canvas2" class="tab-content"></canvas>
+      <div class="canvas vue vue-gen">
+        <canvas id="canvas2" ></canvas>
       </div>
       </div>
-      <div id="chart3" class="tab-content" data-tab-content>
-        <h1>Chart 3:</h1>
-        <div class="canvas radar">
+      <div id="chart3" class="tab-content vue vue-gen" data-tab-content>
+        <h1>Pourcentage d'admis (annuel) :</h1>
+        <div class="canvas radar vue  vue-gen">
         <canvas id="canvas3"></canvas>
       </div>
       </div>

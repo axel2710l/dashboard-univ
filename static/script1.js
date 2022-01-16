@@ -3,7 +3,14 @@
 const tabs = document.querySelectorAll("[data-tab-target]");
 const tabContents = document.querySelectorAll("[data-tab-content]");
 var chart2, chart;
+
 // console.log(years);
+function actualiser(){
+    chart.destroy()
+    chart2.destroy()
+    chart3.destroy()
+    stdPerYear()
+}
 //-------------------------------------students per year---------------------------------------------
 stdPerYear();
 function stdPerYear() {
@@ -72,7 +79,7 @@ function doDisplayGrades() {
       reponse = httpRequest.responseText;
 
       grades = JSON.parse(reponse);
-      console.log(grades);
+    //   console.log(grades);
       setChart3();
     } else {
       alert("Petit soucis");
@@ -181,6 +188,24 @@ function updateChart2(sp1, sp2, sp3) {
   chart2.destroy();
   setChart2(sp1, sp2, sp3);
 }
+var vueChk = document.getElementById('vue-generale')
+vueChk.addEventListener('change',()=>{
+    // console.log(vueChk.checked);
+    var elts = document.querySelectorAll('.vue')
+    if (vueChk.checked) {
+        elts.forEach(element => {
+            console.log(element);
+            element.classList.remove("vue-tabs")
+            element.classList.add("vue-gen")
+        });
+    }else{
+        elts.forEach(element => {
+            element.classList.remove("vue-gen")
+            element.classList.add("vue-tabs")
+            actualiser()
+        });
+    }
+})
 function reloadChart2() {
   var checkedBoxes = document.querySelectorAll(".specialite-choix:checked");
   // console.log(checkedBoxes);
@@ -188,7 +213,7 @@ function reloadChart2() {
     alert("veuillez selectionner 3 specialites!!");
   } else {
     var spec = "SPECIALITE_";
-    console.log(spec + checkedBoxes[0].value);
+    // console.log(spec + checkedBoxes[0].value);
     updateChart2(
       spec + checkedBoxes[0].value,
       spec + checkedBoxes[1].value,
@@ -206,6 +231,7 @@ function setChart1() {
 
     datasets: [
       {
+          label:'Etudiants par année',
         barThickness: 80,
         data: [nbr19, nbr20, nbr21],
         tension: 0.3,
@@ -254,8 +280,8 @@ function setChart3() {
           (e) => e.annee === 2019 + i && e.specialite === "SPECIALITE_" + j
         ).length;
       data3[i].push((pourcentage * 100).toFixed(0));
-      console.log("annee: " + (i + 2019) + "specialite: " + j);
-      console.log(data3[i]);
+    //   console.log("annee: " + (i + 2019) + "specialite: " + j);
+    //   console.log(data3[i]);
     }
   }
 

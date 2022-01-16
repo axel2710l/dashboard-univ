@@ -4,10 +4,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+html{
+  margin: 0;
+}
 body {
   /* background: url(./Images/background.jpg); */
   background-color: #dbe4fa;
   font-family: "Work Sans", sans-serif;
+  margin:0 ;
 }
 .card {
   /* border: 1px solid #ddd; */
@@ -40,7 +44,9 @@ header {
   background-color: #1e2c39;
   padding: 0 20px;
   height: 5rem;
+  width: 98vw;
   font-size: 1.1rem;
+  color: #c7d4f5;
   /* outline: #dbe4fa solid 10px; */
   /* transition: margin ease; */
   /* filter: blur(2px); */
@@ -81,7 +87,7 @@ header button:hover {
 
 #sidebar {
   width: 20%;
-  height: 80vh;
+  height: 85vh;
   position: relative;
   float: left;
   margin: 10px 0px 10px 10px;
@@ -113,7 +119,6 @@ header button:hover {
   width: 75%;
   float: right;
   height: 80vh;
-  margin-right: 20px;
   grid-gap: 0;
 }
 [data-tab-target]:hover {
@@ -296,45 +301,51 @@ input:checked + .slider:before {
 
 
 
-/* .tab-content {
+.vue-tabs.tab-content {
   display: none;
 }
-.tab-content.active {
+.vue-tabs.tab-content.active {
   display: block;
   
 }
-.canvas{
+.vue-tabs.canvas{
   padding: 20px;
   height: 70%;
   width: 70%;
-  float: right;
+  /* margin: auto; */
 }
-.tab-content{
+.vue-tabs.tab-content{
   margin: 0 10px;
   
-} */
+}
+.vue-tabs.radar{
+  height: 35rem;
+  width: 35rem;
+}
 
 
 
-.main{
+.vue-gen.main{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 0;
 }
-.tab-content.active{
+.vue-gen.tab-content.active{
   background-color: #c7d4f5;
 }
-.tab-content{
+.vue-gen.tab-content{
   margin: 0 10px;
 }
-#chart3{
+.vue-gen#chart3{
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 2;
   grid-column-end: 3;
   height: 75vh;
+  margin: auto;
 }
 
-.radar{
+.vue-gen.radar{
   height: 300px;
   width: 400px;
   float: right;
