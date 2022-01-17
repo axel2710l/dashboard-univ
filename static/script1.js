@@ -197,6 +197,7 @@ vueChk.addEventListener('change',()=>{
             console.log(element);
             element.classList.remove("vue-tabs")
             element.classList.add("vue-gen")
+            actualiser()
         });
     }else{
         elts.forEach(element => {
